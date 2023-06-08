@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.4 on win32)" generated="20230608 16:16:01.244" rpa="false" schemaversion="3">
+<suite id="s1" name="Rd" source="D:\Robot\rd.robot">
+<test id="s1-t1" name="Flow การยื่นแบบภาษี" line="11">
+<kw name="Go to efilling Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>chrome://newtab/</arg>
+<arg>browser=${TARGET}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230608 16:16:01.383" level="INFO">Opening browser 'chrome' to base url 'chrome://newtab/'.</msg>
+<msg timestamp="20230608 16:16:01.391" level="INFO">Executing: C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --output json</msg>
+<status status="PASS" starttime="20230608 16:16:01.382" endtime="20230608 16:16:02.604"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230608 16:16:02.605" level="INFO">Opening url 'https://efiling.rd.go.th/rd-cms/'</msg>
+<status status="PASS" starttime="20230608 16:16:02.604" endtime="20230608 16:16:02.930"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230608 16:16:02.930" endtime="20230608 16:16:03.053"/>
+</kw>
+<status status="PASS" starttime="20230608 16:16:01.381" endtime="20230608 16:16:03.053"/>
+</kw>
+<kw name="Read information">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:exampleModalLabel</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230608 16:16:03.053" endtime="20230608 16:16:03.074"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="announceModal"]/div/div/div[2]/div/div[2]/span/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230608 16:16:03.074" level="INFO">Clicking element 'xpath=//*[@id="announceModal"]/div/div/div[2]/div/div[2]/span/a'.</msg>
+<status status="PASS" starttime="20230608 16:16:03.074" endtime="20230608 16:16:03.123"/>
+</kw>
+<status status="PASS" starttime="20230608 16:16:03.053" endtime="20230608 16:16:03.124"/>
+</kw>
+<kw name="View service detail">
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230608 16:16:03.124" endtime="20230608 16:16:03.135"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>xpath=//div/div[2]/h4[3]</arg>
+<arg>ช่วงเวลาการให้บริการของแต่ละช่องทาง</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230608 16:16:03.135" endtime="20230608 16:16:04.414"/>
+</kw>
+<status status="PASS" starttime="20230608 16:16:03.124" endtime="20230608 16:16:04.414"/>
+</kw>
+<kw name="Start e-filling process">
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230608 16:16:04.414" endtime="20230608 16:16:04.425"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="announceModal"]/div/div/div[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230608 16:16:04.426" level="INFO">Clicking element 'xpath=//*[@id="announceModal"]/div/div/div[1]/button'.</msg>
+<status status="PASS" starttime="20230608 16:16:04.426" endtime="20230608 16:16:04.483"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="top"]/div/div[2]/button[1]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230608 16:16:04.484" level="INFO">Clicking element 'xpath=//*[@id="top"]/div/div[2]/button[1]/a'.</msg>
+<status status="PASS" starttime="20230608 16:16:04.483" endtime="20230608 16:16:04.865"/>
+</kw>
+<status status="PASS" starttime="20230608 16:16:04.414" endtime="20230608 16:16:04.866"/>
+</kw>
+<status status="PASS" starttime="20230608 16:16:01.381" endtime="20230608 16:16:04.866"/>
+</test>
+<status status="PASS" starttime="20230608 16:16:01.245" endtime="20230608 16:16:04.867"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Rd">Rd</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
