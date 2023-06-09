@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.4 on win32)" generated="20230609 14:03:55.156" rpa="false" schemaversion="3">
+<suite id="s1" name="Login Fail 3" source="D:\Robot\New\Login_Fail_3.robot">
+<kw name="Go to login" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demo-login-workshop.vercel.app/</arg>
+<arg>browser=gc</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230609 14:03:55.304" level="INFO">Opening browser 'gc' to base url 'https://demo-login-workshop.vercel.app/'.</msg>
+<msg timestamp="20230609 14:03:55.315" level="INFO">Executing: C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --output json</msg>
+<status status="PASS" starttime="20230609 14:03:55.304" endtime="20230609 14:03:56.628"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230609 14:03:56.628" endtime="20230609 14:03:56.748"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:55.304" endtime="20230609 14:03:56.748"/>
+</kw>
+<test id="s1-t1" name="Wrong username" line="11">
+<kw name="Template for login failed">
+<arg>demo2</arg>
+<arg>mode</arg>
+<kw name="Input user=${username} and password=${password}" sourcename="Input user=${username} and password=${password}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username_field</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:56.750" level="INFO">Typing text 'demo2' into text field 'id:username_field'.</msg>
+<status status="PASS" starttime="20230609 14:03:56.749" endtime="20230609 14:03:56.822"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password_field</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:56.822" level="INFO">Typing text 'mode' into text field 'id:password_field'.</msg>
+<status status="PASS" starttime="20230609 14:03:56.822" endtime="20230609 14:03:56.868"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:login_button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:56.868" level="INFO">Clicking element 'id:login_button'.</msg>
+<status status="PASS" starttime="20230609 14:03:56.868" endtime="20230609 14:03:56.987"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:56.749" endtime="20230609 14:03:56.987"/>
+</kw>
+<kw name="Login result fail and show error">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>xpath://*[@id="container"]/h1</arg>
+<arg>Error Page</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230609 14:03:56.987" endtime="20230609 14:03:57.010"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://*[@id="container"]/p</arg>
+<arg>Login failed. Invalid user name and/or password.</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230609 14:03:57.024" level="INFO">Element 'xpath://*[@id="container"]/p' contains text 'Login failed. Invalid user name and/or password.'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.010" endtime="20230609 14:03:57.024"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:56.987" endtime="20230609 14:03:57.024"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:56.749" endtime="20230609 14:03:57.024"/>
+</kw>
+<kw name="Back to login" type="TEARDOWN">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://demo-login-workshop.vercel.app/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230609 14:03:57.024" level="INFO">Opening url 'https://demo-login-workshop.vercel.app/'</msg>
+<status status="PASS" starttime="20230609 14:03:57.024" endtime="20230609 14:03:57.102"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.024" endtime="20230609 14:03:57.102"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:56.748" endtime="20230609 14:03:57.102"/>
+</test>
+<test id="s1-t2" name="Wrong password" line="12">
+<kw name="Template for login failed">
+<arg>demo</arg>
+<arg>mode2</arg>
+<kw name="Input user=${username} and password=${password}" sourcename="Input user=${username} and password=${password}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username_field</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:57.104" level="INFO">Typing text 'demo' into text field 'id:username_field'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.104" endtime="20230609 14:03:57.149"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password_field</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:57.149" level="INFO">Typing text 'mode2' into text field 'id:password_field'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.149" endtime="20230609 14:03:57.194"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:login_button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:57.195" level="INFO">Clicking element 'id:login_button'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.194" endtime="20230609 14:03:57.296"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.104" endtime="20230609 14:03:57.296"/>
+</kw>
+<kw name="Login result fail and show error">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>xpath://*[@id="container"]/h1</arg>
+<arg>Error Page</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230609 14:03:57.296" endtime="20230609 14:03:57.306"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://*[@id="container"]/p</arg>
+<arg>Login failed. Invalid user name and/or password.</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230609 14:03:57.316" level="INFO">Element 'xpath://*[@id="container"]/p' contains text 'Login failed. Invalid user name and/or password.'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.306" endtime="20230609 14:03:57.316"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.296" endtime="20230609 14:03:57.316"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.103" endtime="20230609 14:03:57.316"/>
+</kw>
+<kw name="Back to login" type="TEARDOWN">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://demo-login-workshop.vercel.app/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230609 14:03:57.317" level="INFO">Opening url 'https://demo-login-workshop.vercel.app/'</msg>
+<status status="PASS" starttime="20230609 14:03:57.316" endtime="20230609 14:03:57.400"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.316" endtime="20230609 14:03:57.400"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.103" endtime="20230609 14:03:57.400"/>
+</test>
+<test id="s1-t3" name="Wrong username and password" line="13">
+<kw name="Template for login failed">
+<arg>demo2</arg>
+<arg>mode2</arg>
+<kw name="Input user=${username} and password=${password}" sourcename="Input user=${username} and password=${password}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username_field</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:57.403" level="INFO">Typing text 'demo2' into text field 'id:username_field'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.402" endtime="20230609 14:03:57.445"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password_field</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:57.446" level="INFO">Typing text 'mode2' into text field 'id:password_field'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.445" endtime="20230609 14:03:57.486"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:login_button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:57.487" level="INFO">Clicking element 'id:login_button'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.486" endtime="20230609 14:03:57.593"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.402" endtime="20230609 14:03:57.593"/>
+</kw>
+<kw name="Login result fail and show error">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>xpath://*[@id="container"]/h1</arg>
+<arg>Error Page</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230609 14:03:57.593" endtime="20230609 14:03:57.604"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://*[@id="container"]/p</arg>
+<arg>Login failed. Invalid user name and/or password.</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230609 14:03:57.608" level="INFO">Element 'xpath://*[@id="container"]/p' contains text 'Login failed. Invalid user name and/or password.'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.604" endtime="20230609 14:03:57.608"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.593" endtime="20230609 14:03:57.608"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.402" endtime="20230609 14:03:57.608"/>
+</kw>
+<kw name="Back to login" type="TEARDOWN">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://demo-login-workshop.vercel.app/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230609 14:03:57.608" level="INFO">Opening url 'https://demo-login-workshop.vercel.app/'</msg>
+<status status="PASS" starttime="20230609 14:03:57.608" endtime="20230609 14:03:57.690"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.608" endtime="20230609 14:03:57.690"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.401" endtime="20230609 14:03:57.690"/>
+</test>
+<test id="s1-t4" name="Empty username" line="14">
+<kw name="Template for login failed">
+<arg>${EMPTY}</arg>
+<arg>mode</arg>
+<kw name="Input user=${username} and password=${password}" sourcename="Input user=${username} and password=${password}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username_field</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:57.692" level="INFO">Typing text '' into text field 'id:username_field'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.692" endtime="20230609 14:03:57.734"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password_field</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:57.734" level="INFO">Typing text 'mode' into text field 'id:password_field'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.734" endtime="20230609 14:03:57.776"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:login_button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:57.776" level="INFO">Clicking element 'id:login_button'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.776" endtime="20230609 14:03:57.873"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.692" endtime="20230609 14:03:57.873"/>
+</kw>
+<kw name="Login result fail and show error">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>xpath://*[@id="container"]/h1</arg>
+<arg>Error Page</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230609 14:03:57.873" endtime="20230609 14:03:57.883"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://*[@id="container"]/p</arg>
+<arg>Login failed. Invalid user name and/or password.</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230609 14:03:57.887" level="INFO">Element 'xpath://*[@id="container"]/p' contains text 'Login failed. Invalid user name and/or password.'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.883" endtime="20230609 14:03:57.887"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.873" endtime="20230609 14:03:57.887"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.691" endtime="20230609 14:03:57.887"/>
+</kw>
+<kw name="Back to login" type="TEARDOWN">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://demo-login-workshop.vercel.app/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230609 14:03:57.887" level="INFO">Opening url 'https://demo-login-workshop.vercel.app/'</msg>
+<status status="PASS" starttime="20230609 14:03:57.887" endtime="20230609 14:03:57.973"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.887" endtime="20230609 14:03:57.973"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.691" endtime="20230609 14:03:57.974"/>
+</test>
+<test id="s1-t5" name="Empty password" line="15">
+<kw name="Template for login failed">
+<arg>demo</arg>
+<arg>${EMPTY}</arg>
+<kw name="Input user=${username} and password=${password}" sourcename="Input user=${username} and password=${password}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username_field</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:57.975" level="INFO">Typing text 'demo' into text field 'id:username_field'.</msg>
+<status status="PASS" starttime="20230609 14:03:57.975" endtime="20230609 14:03:58.022"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password_field</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:58.023" level="INFO">Typing text '' into text field 'id:password_field'.</msg>
+<status status="PASS" starttime="20230609 14:03:58.023" endtime="20230609 14:03:58.067"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:login_button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230609 14:03:58.067" level="INFO">Clicking element 'id:login_button'.</msg>
+<status status="PASS" starttime="20230609 14:03:58.067" endtime="20230609 14:03:58.163"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.975" endtime="20230609 14:03:58.163"/>
+</kw>
+<kw name="Login result fail and show error">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>xpath://*[@id="container"]/h1</arg>
+<arg>Error Page</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230609 14:03:58.164" endtime="20230609 14:03:58.174"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://*[@id="container"]/p</arg>
+<arg>Login failed. Invalid user name and/or password.</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230609 14:03:58.182" level="INFO">Element 'xpath://*[@id="container"]/p' contains text 'Login failed. Invalid user name and/or password.'.</msg>
+<status status="PASS" starttime="20230609 14:03:58.174" endtime="20230609 14:03:58.182"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:58.164" endtime="20230609 14:03:58.182"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.974" endtime="20230609 14:03:58.182"/>
+</kw>
+<kw name="Back to login" type="TEARDOWN">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://demo-login-workshop.vercel.app/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230609 14:03:58.183" level="INFO">Opening url 'https://demo-login-workshop.vercel.app/'</msg>
+<status status="PASS" starttime="20230609 14:03:58.183" endtime="20230609 14:03:58.261"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:58.183" endtime="20230609 14:03:58.261"/>
+</kw>
+<status status="PASS" starttime="20230609 14:03:57.974" endtime="20230609 14:03:58.261"/>
+</test>
+<status status="PASS" starttime="20230609 14:03:55.156" endtime="20230609 14:03:58.262"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Login Fail 3">Login Fail 3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
