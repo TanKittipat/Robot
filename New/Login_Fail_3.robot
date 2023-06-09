@@ -2,6 +2,7 @@
 Library             SeleniumLibrary
 
 Suite Setup         Go to login
+Suite Teardown      Close Browser
 Test Teardown       Back to login
 Task Template       Template for login failed
 
@@ -25,6 +26,7 @@ Go to login
     Open Browser    https://demo-login-workshop.vercel.app/
     ...    browser=gc
     ...    options=add_experimental_option("detach", True)
+    ...    remote_url=http://167.99.75.45:8080/wd/hub
     Maximize Browser Window
 
 Back to login
