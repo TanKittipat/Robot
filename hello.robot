@@ -27,3 +27,5 @@ Search with keyword=hello
 
 Found result with hello
     Wait Until Page Contains    hello
+    ${result}=    Get Text    id:result-stats
+    Log To Console    ${result}
